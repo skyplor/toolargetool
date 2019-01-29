@@ -22,7 +22,7 @@ class ActivitySavedStateLogger(
     var isLogging: Boolean = false
         private set
 
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {
+    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         if (activity is FragmentActivity && fragmentLogger != null) {
             activity.supportFragmentManager
                     .registerFragmentLifecycleCallbacks(fragmentLogger, true)
